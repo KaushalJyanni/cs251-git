@@ -1,6 +1,20 @@
 \documentclass[12pt, a4paper]{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
 
-\author{Kaushal Jyanni\\Manish Rai\\}
+\newcommand\score[2]{
+\pgfmathsetmacro\pgfxa{#1+1}
+\tikzstyle{scorestars}=[star, star points=5, star point ratio=2.25, draw,inner sep=1.3pt,anchor=outer point 3]
+  \begin{tikzpicture}[baseline]
+    \foreach \i in {1,...,#2} {
+    \pgfmathparse{(\i<=#1?"yellow":"gray")}
+    \edef\starcolor{\pgfmathresult}
+    \draw (\i*1.75ex,0) node[name=star\i,scorestars,fill=\starcolor]  {};
+   }
+  \end{tikzpicture}
+}
+
+\author{Kaushal Jyanni\\Manish Rai\\Neelabh Suman\\}
 \title{\Huge Movie reviews}
 \date{\small April 2, 2017}
 
@@ -8,4 +22,33 @@
 	\maketitle
 	% reviews here.
 	% I am thinking over writing about Rang De Basanti and 3 Idiots.
+	\section*{\underline{Rang De Basanti}}
+	\textbf{Director:} Rakeysh Mehra\\
+	\textbf{Starring:} Aamir Khan, R Madhavan, Atul Kulkarni, Kunal Kapoor, Sharman Joshi, Sidharth and Soha Ali Khan\\
+	\textbf{Rating:} \score{4.5}{5}\\\\
+	\textit{Rang De Basanti} is inarguably a great Indian movie. Not many movies can make you so thoughtful about who we have become. Rang De Basanti does.\\
+	It shows group of college students at Delhi University, enjoying life. They are joined by a female British filmmaker who decides to cast them in a film. Life goes well, until the the death of their friend due to prevalent corruption in the government. Although never having had any involvement in politics, they decide to protest for justice to their friend. Their struggle, journey and the consequences have been shown throughout the movie with an analogy to the freedom fighters of India. The portrayal of the students as a freedom fighters, and the parallelism b/w the events in the history and present builds up so intensely, that you will start feeling a connection to the cause.\\\\
+	The movied literally moved my soul. The story, the direction, the excellent cast  or the soothing music by Lata Mangeshkar and A R Rahman, every aspect of the film is crafted beautifully. It successfully conveys the message it intends to. I highly 
+recommend watching this movie.
+
+	\section*{\underline{3 Idiots}}
+    \textbf{Director:} Raju Hirani\\
+    \textbf{Actors:} Aamir Khan, Sharman Joshi, Madhavan\\
+    \textbf{Rating:}\score{3}{5}\\\\
+    3 Idiots is a coming-age comedy and inspirational film directed by Rajkumar 
+Hirani. The story of the film is based on the famous novel \textit{Five Point 
+Someone} by Chetan Bhagat. This film is based on our Indian educational system 
+which pressurizes the students and has an obsession for high grades. Aamir Khan 
+as Rancho plays the role of a very bright student who motivates his friends pursue 
+their passion and make a career out of it. R.Madhavan as Farhan who wants to 
+become a wildlife photographer but was forced to pursue engineering because of 
+his strict father.\\\\
+Sharman Joshi as Raju who is pursuing engineering with the goal of getting his family out of extreme poverty. Boman Irani as virus who plays the role of a strict 
+college director who is highly competitive. Kareena Kapoor as Pia who plays the 
+role of virus’s daughter and falls in love with Aamir khan. The film goes very 
+smooth. The film’s first half includes ragging scene, confrontations with the 
+professor, Chatur’s speech and mournful meal at Raju’s home. Overall the film 
+depicts a very nice mingle of comedy, suspense and motivational. All the actors 
+and co-actors done a commendable job. The music of the film was
+very soothing. The back ground music supports the film all through the movie. Overall dipiction is fine.  Some of the scenes are really emotional. Overall rating is excellent.Its definitely a one time watch.
 \end{document}
